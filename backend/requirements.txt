@@ -1,0 +1,7 @@
+django
+djangorestframework
+python-dotenv
+django-extensions
+django-filter
+sqlparse
+psycopg2
