@@ -22,7 +22,7 @@ class Technician(models.Model):
 class Maintenance(models.Model):
     id = models.AutoField(primary_key=True)
     machine = models.ForeignKey(Machine, on_delete=models.CASCADE)
-    technician = models.ForeignKey(Technician, on_delete=models.CASCADE)
+    technician = models.ForeignKey(Technician, on_delete=models.SET_NULL, null=True)
     maintenance_date = models.DateField()
     maintenance_description = models.TextField()
 

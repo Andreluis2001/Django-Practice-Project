@@ -1,7 +1,7 @@
 from rest_framework import generics
 from api.models import Machine, Maintenance, Technician
 from api.serializers import MachineSerializer, MaintenanceSerializer, TechnicianSerializer
-from api.filters import MachineFilter
+from api.filters import MachineFilter, MaintenanceFilter
 
 class MachineListAPIView(generics.ListCreateAPIView):
     queryset = Machine.objects.all()
@@ -23,6 +23,7 @@ class TechnicianDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 class MaintenanceListAPIView(generics.ListCreateAPIView):
     queryset = Maintenance.objects.all()
     serializer_class = MaintenanceSerializer
+    filterset_class = MaintenanceFilter
 
 class MaintenanceDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Maintenance.objects.all()
